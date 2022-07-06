@@ -1,0 +1,15 @@
+C:\Users\1\RiderProjects\Сsharp_Profiler\Сsharp_Profiler\bin\Debug\net6.0\Сsharp_Profiler.exe
+C:\Users\1\RiderProjects\Сsharp_Profiler\Сsharp_Profiler\bin\Debug\net6.0\Сsharp_Profiler.deps.json
+C:\Users\1\RiderProjects\Сsharp_Profiler\Сsharp_Profiler\bin\Debug\net6.0\Сsharp_Profiler.runtimeconfig.json
+C:\Users\1\RiderProjects\Сsharp_Profiler\Сsharp_Profiler\bin\Debug\net6.0\Сsharp_Profiler.dll
+C:\Users\1\RiderProjects\Сsharp_Profiler\Сsharp_Profiler\bin\Debug\net6.0\Сsharp_Profiler.pdb
+C:\Users\1\RiderProjects\Сsharp_Profiler\Сsharp_Profiler\obj\Debug\net6.0\Сsharp_Profiler.csproj.AssemblyReference.cache
+C:\Users\1\RiderProjects\Сsharp_Profiler\Сsharp_Profiler\obj\Debug\net6.0\Сsharp_Profiler.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\1\RiderProjects\Сsharp_Profiler\Сsharp_Profiler\obj\Debug\net6.0\Сsharp_Profiler.AssemblyInfoInputs.cache
+C:\Users\1\RiderProjects\Сsharp_Profiler\Сsharp_Profiler\obj\Debug\net6.0\Сsharp_Profiler.AssemblyInfo.cs
+C:\Users\1\RiderProjects\Сsharp_Profiler\Сsharp_Profiler\obj\Debug\net6.0\Сsharp_Profiler.csproj.CoreCompileInputs.cache
+C:\Users\1\RiderProjects\Сsharp_Profiler\Сsharp_Profiler\obj\Debug\net6.0\Сsharp_Profiler.dll
+C:\Users\1\RiderProjects\Сsharp_Profiler\Сsharp_Profiler\obj\Debug\net6.0\refint\Сsharp_Profiler.dll
+C:\Users\1\RiderProjects\Сsharp_Profiler\Сsharp_Profiler\obj\Debug\net6.0\Сsharp_Profiler.pdb
+C:\Users\1\RiderProjects\Сsharp_Profiler\Сsharp_Profiler\obj\Debug\net6.0\Сsharp_Profiler.genruntimeconfig.cache
+C:\Users\1\RiderProjects\Сsharp_Profiler\Сsharp_Profiler\obj\Debug\net6.0\ref\Сsharp_Profiler.dll
