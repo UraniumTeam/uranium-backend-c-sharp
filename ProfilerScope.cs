@@ -12,7 +12,8 @@ public class ProfilerScope : IDisposable
 
     public void Dispose()
     {
-        var endTime = Stopwatch.GetTimestamp() - UraniumProfiler._startTime;
-        UraniumProfiler.Events?.Add(new EventData(UraniumProfiler._functionName, UraniumProfiler._startTime, endTime));
+        var endTime = Stopwatch.GetTimestamp();
+        var elapsed = endTime - UraniumProfiler._startTime;
+        UraniumProfiler.Events?.Add(new EventData(UraniumProfiler._functionName, UraniumProfiler._startTime, endTime, elapsed));
     }
 }

@@ -1,11 +1,14 @@
-﻿namespace СSharp_Profiler
+﻿using System.Diagnostics;
+
+namespace СSharp_Profiler
 {
     class Program
     {
         public static void Main()
         {
             Test();
-            Test2();
+            SecondTest();
+            Test();
             UraniumProfiler.SaveSession();
         }
 
@@ -19,9 +22,9 @@
             }
         }
 
-        public static void Test2()
+        public static void SecondTest()
         {
-            using var scope = new ProfilerScope(nameof(Test2));
+            using var scope = new ProfilerScope(nameof(SecondTest));
             var count = 0;
             for (var i = 0; i < 1000000000; i++)
             {
