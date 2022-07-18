@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UraniumBackend", "UraniumBackend\UraniumBackend.csproj", "{9C9629D6-F65D-464D-95C3-FCC4810FAE5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UraniumBackendTests", "UraniumBackendTests\UraniumBackendTests.csproj", "{DD5B4B2A-0923-4A2C-8F1B-C5ECBF131DF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C9629D6-F65D-464D-95C3-FCC4810FAE5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C9629D6-F65D-464D-95C3-FCC4810FAE5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C9629D6-F65D-464D-95C3-FCC4810FAE5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C9629D6-F65D-464D-95C3-FCC4810FAE5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD5B4B2A-0923-4A2C-8F1B-C5ECBF131DF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD5B4B2A-0923-4A2C-8F1B-C5ECBF131DF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD5B4B2A-0923-4A2C-8F1B-C5ECBF131DF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD5B4B2A-0923-4A2C-8F1B-C5ECBF131DF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5BD5BB3B-7C17-43AF-8295-5F3B7A789914}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,19 @@
+﻿using System.Diagnostics;
+
+namespace UraniumBackend;
+
+public class ProfilerScope : IDisposable
+{
+    public ProfilerScope(string functionName)
+    {
+        UraniumProfiler._functionName = functionName;
+        UraniumProfiler._startTime = Stopwatch.GetTimestamp();
+    }
+
+    public void Dispose()
+    {
+        var endTime = Stopwatch.GetTimestamp();
+        var elapsed = endTime - UraniumProfiler._startTime;
+        UraniumProfiler.Events?.Add(new EventData(UraniumProfiler._functionName, UraniumProfiler._startTime, endTime, elapsed));
+    }
+}
