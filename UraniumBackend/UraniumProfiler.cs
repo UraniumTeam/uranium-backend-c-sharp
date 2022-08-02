@@ -41,16 +41,19 @@ public static class UraniumProfiler
         }
 
         var data = new List<byte>();
-        var uniqueFuncs = Events.DistinctBy(e => e.FunctionName).ToList();
+        var functionNames = Events
+            .DistinctBy(e => e.FunctionName)
+            .Select(e => e.FunctionName)
+            .OrderBy(e => e)
+            .ToList();
 
         // Header
-        var functionsCount = (uint)uniqueFuncs.Count;
         var nanosecondsInTick = 1000000000.0 / Stopwatch.Frequency;
         data.AddRange(BitConverter.GetBytes(nanosecondsInTick));
-        data.AddRange(BitConverter.GetBytes(functionsCount));
-        foreach (var e in uniqueFuncs)
+        data.AddRange(BitConverter.GetBytes((uint)functionNames.Count));
+        foreach (var name in functionNames)
         {
-            var nameBytes = Encoding.ASCII.GetBytes(e.FunctionName);
+            var nameBytes = Encoding.ASCII.GetBytes(name);
             data.AddRange(BitConverter.GetBytes((ushort)nameBytes.Length));
             data.AddRange(nameBytes);
         }
@@ -60,13 +63,13 @@ public static class UraniumProfiler
         data.AddRange(BitConverter.GetBytes(eventsCount));
         foreach (var e in Events)
         {
-            var functionIndex = (uint)Events.IndexOf(e);
+            var functionIndex = (uint)functionNames.BinarySearch(e.FunctionName);
             var cpuTicks = (ulong)e.StartTime;
             var endCpuTicks = (ulong)e.EndTime;
 
             data.AddRange(BitConverter.GetBytes(functionIndex));
             data.AddRange(BitConverter.GetBytes(cpuTicks));
-            data.AddRange(BitConverter.GetBytes(functionIndex));
+            data.AddRange(BitConverter.GetBytes(functionIndex | (1 << 28)));
             data.AddRange(BitConverter.GetBytes(endCpuTicks));
         }
 
