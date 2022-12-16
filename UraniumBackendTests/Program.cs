@@ -10,7 +10,7 @@ namespace UraniumBackendTests
             SecondTest();
             Test();
 
-            UraniumProfiler.SaveSession();
+            ProfilerInstance.Save();
         }
 
         public static void Test()

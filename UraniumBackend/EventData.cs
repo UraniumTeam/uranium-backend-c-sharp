@@ -3,15 +3,30 @@
 public readonly struct EventData
 {
     public readonly string FunctionName;
-    public readonly long StartTime;
-    public readonly long EndTime;
-    public readonly long Elapsed;
+    public readonly ulong Time;
+    public readonly EventKind Kind;
 
-    public EventData(string functionName, long startTime, long endTime, long elapsed)
+    public EventData(string functionName, ulong time, EventKind kind)
     {
         FunctionName = functionName;
-        StartTime = startTime;
-        EndTime = endTime;
-        Elapsed = elapsed;
+        Time = time;
+        Kind = kind;
+    }
+
+    public void WriteTo(BinaryWriter writer, uint functionIndex)
+    {
+        switch (Kind)
+        {
+            case EventKind.Begin:
+                writer.Write(functionIndex);
+                break;
+            case EventKind.End:
+                writer.Write(functionIndex | (1 << 28));
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+        
+        writer.Write(Time);
     }
 }

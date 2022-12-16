@@ -1,19 +1,21 @@
-﻿using System.Diagnostics;
+﻿using System.Runtime.CompilerServices;
 
 namespace UraniumBackend;
 
-public class ProfilerScope : IDisposable
+public readonly struct ProfilerScope : IDisposable
 {
+    private readonly string functionName;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public ProfilerScope(string functionName)
     {
-        UraniumProfiler._functionName = functionName;
-        UraniumProfiler._startTime = Stopwatch.GetTimestamp();
+        this.functionName = functionName;
+        ProfilerInstance.AddEvent(new EventData(functionName, ProfilerInstance.Ticks, EventKind.Begin));
     }
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void Dispose()
     {
-        var endTime = Stopwatch.GetTimestamp();
-        var elapsed = endTime - UraniumProfiler._startTime;
-        UraniumProfiler.Events?.Add(new EventData(UraniumProfiler._functionName, UraniumProfiler._startTime, endTime, elapsed));
+        ProfilerInstance.AddEvent(new EventData(functionName, ProfilerInstance.Ticks, EventKind.End));
     }
 }
