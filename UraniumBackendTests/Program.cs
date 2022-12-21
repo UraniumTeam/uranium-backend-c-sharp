@@ -15,7 +15,7 @@ namespace UraniumBackendTests
 
         public static void Test()
         {
-            using var scope = new ProfilerScope(nameof(Test));
+            using var scope = ProfilerScope.Begin(nameof(Test));
             var count = 0;
             for (var i = 0; i < 2; i++)
             {
@@ -25,7 +25,7 @@ namespace UraniumBackendTests
 
         public static void SecondTest()
         {
-            using var scope = new ProfilerScope(nameof(SecondTest));
+            using var scope = ProfilerScope.Begin(nameof(SecondTest));
             var count = 0;
             for (var i = 0; i < 1000000000; i++)
             {
