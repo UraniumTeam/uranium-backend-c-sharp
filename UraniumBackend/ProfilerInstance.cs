@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Diagnostics;
-using System.IO;
+﻿using System.Diagnostics;
 using System.Text;
 
 
@@ -37,7 +35,7 @@ public sealed class ProfilerInstance
         using var stream = new FileStream(path, FileMode.Create);
         using var writer = new BinaryWriter(stream);
         WriteData(writer);
-        File.WriteAllText($"{sessionName}.ups", Path.GetFullPath(path));
+        File.WriteAllText($"{sessionName}.ups", "{\nthreads : [\"" + Path.GetFullPath(path).Replace("\\", "/") + "\"]\n}");
     }
 
     private void WriteData(BinaryWriter writer)
